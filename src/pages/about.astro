@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { site } from '../data/site';
+
+const milestones = [
+	{ year: '2024', title: '公司成立', desc: '公司正式成立，聚焦网络安全与基础服务领域。' },
+	{ year: '2025', title: 'SSL 证书平台启动', desc: '启动 SSL 证书平台研发，构建全流程签发管理体系。' },
+	{ year: '规划中', title: '安全服务矩阵', desc: '逐步扩展安全合规、CDN 加速等服务，构建完整生态。' },
+];
+---
+
+<BaseLayout title="关于我们" description={`了解${site.companyName}的发展历程与愿景。`}>
+	<section class="border-b border-slate-200 bg-slate-50">
+		<div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+			<h1 class="text-4xl font-extrabold text-slate-900">关于我们</h1>
+			<p class="mt-3 max-w-2xl text-lg text-slate-600">
+				构建安全可信的数字世界，是我们的使命。
+			</p>
+		</div>
+	</section>
+
+	<!-- 公司介绍 -->
+	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+		<div class="grid gap-10 md:grid-cols-2">
+			<div>
+				<h2 class="text-2xl font-bold text-slate-900">公司介绍</h2>
+				<p class="mt-4 leading-relaxed text-slate-600">
+					{site.companyName}（{site.brand}）是一家专注于网络安全与基础服务的技术企业。
+					我们以 SSL 证书签发与管理为核心，为电商、金融、教育、政企等行业客户提供
+					可信、高效、合规的安全解决方案。
+				</p>
+				<p class="mt-4 leading-relaxed text-slate-600">
+					我们相信，安全是数字业务发展的基石。通过专业的技术团队、稳定的服务能力
+					与可靠的合作伙伴生态，助力每一位客户构建安全可信的在线业务。
+				</p>
+			</div>
+			<div class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
+				<h3 class="text-lg font-bold text-slate-900">资质与承诺</h3>
+				<ul class="mt-4 space-y-3 text-sm text-slate-600">
+					<li class="flex items-start gap-2">
+						<span class="mt-1 text-brand-600">•</span> 正规企业主体，合规经营（营业执照备案后补充）
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="mt-1 text-brand-600">•</span> 与主流 CA 机构深度合作，证书可信可靠
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="mt-1 text-brand-600">•</span> 7×24 小时专业技术支持
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- 发展历程 -->
+	<section class="bg-slate-50 py-16">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6">
+			<h2 class="text-2xl font-bold text-slate-900">发展历程</h2>
+			<div class="mt-10 space-y-8 border-l-2 border-brand-200 pl-6">
+				{
+					milestones.map((m) => (
+						<div class="relative">
+							<span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full border-2 border-brand-500 bg-white" />
+							<span class="text-sm font-semibold text-brand-600">{m.year}</span>
+							<h3 class="mt-1 text-lg font-bold text-slate-900">{m.title}</h3>
+							<p class="mt-1 text-sm text-slate-600">{m.desc}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<CTASection title="加入我们的客户行列" subtitle="让专业团队为你的业务安全保驾护航。" />
+</BaseLayout>

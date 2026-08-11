@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+	<!-- 装饰背景 -->
+	<div aria-hidden class="pointer-events-none absolute inset-0">
+		<div class="absolute -top-20 right-0 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl" />
+		<div class="absolute top-40 left-1/4 h-64 w-64 rounded-full bg-brand-100/50 blur-3xl" />
+	</div>
+
+	<div class="relative mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 sm:py-28">
+		<span class="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-4 py-1 text-xs font-medium text-brand-700">
+			可信网络安全与基础服务提供商
+		</span>
+		<h1 class="mx-auto mt-6 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+			构建安全可信的数字世界
+		</h1>
+		<p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+			{site.description}
+		</p>
+		<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<a
+				href="/products/ssl"
+				class="inline-flex items-center justify-center rounded-lg bg-brand-600 px-8 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-700"
+			>
+				进入 SSL 证书平台
+			</a>
+			<a
+				href="/contact"
+				class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-8 py-3 text-base font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600"
+			>
+				联系我们
+			</a>
+		</div>
+	</div>
+</section>

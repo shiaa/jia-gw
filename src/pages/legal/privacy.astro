@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+---
+
+<BaseLayout title="隐私政策" description={`${site.companyName}隐私政策，说明我们如何收集、使用与保护您的信息。`}>
+	<section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+		<h1 class="text-3xl font-extrabold text-slate-900">隐私政策</h1>
+		<p class="mt-2 text-sm text-slate-400">更新日期：{site.brand} 保留最终解释权</p>
+
+		<div class="mt-8 space-y-8 leading-relaxed text-slate-600">
+			<section>
+				<h2 class="text-xl font-bold text-slate-900">一、引言</h2>
+				<p class="mt-3">
+					{site.companyName}（以下称"我们"）重视您的隐私。本政策说明我们在您访问本网站时
+					如何收集、使用、存储和保护您的个人信息。本政策仅适用于本官网网站。
+				</p>
+			</section>
+			<section>
+				<h2 class="text-xl font-bold text-slate-900">二、信息收集</h2>
+				<p class="mt-3">
+					在您访问本网站时，我们可能会收集以下信息：您主动提交的联系信息（如通过联系我们表单提交的姓名、邮箱、留言内容），以及网站访问产生的浏览记录（如 IP 地址、浏览器类型、访问时间等，用于统计与安全防护）。
+				</p>
+			</section>
+			<section>
+				<h2 class="text-xl font-bold text-slate-900">三、信息使用</h2>
+				<p class="mt-3">
+					我们收集的信息仅用于：响应您的咨询与服务请求、改进网站内容与用户体验、
+					保障网站安全与稳定运行。未经您的同意，我们不会将您的个人信息用于其他用途。
+				</p>
+			</section>
+			<section>
+				<h2 class="text-xl font-bold text-slate-900">四、信息保护</h2>
+				<p class="mt-3">
+					我们采取合理的技术与管理措施保护您的个人信息，防止信息被未经授权的访问、
+					公开披露、使用或破坏。
+				</p>
+			</section>
+			<section>
+				<h2 class="text-xl font-bold text-slate-900">五、联系方式</h2>
+				<p class="mt-3">
+					如您对本隐私政策有任何疑问，可通过邮箱 {site.contact.email} 或电话 {site.contact.phone} 与我们联系。
+				</p>
+			</section>
+			<p class="mt-8 rounded-lg bg-slate-50 p-4 text-sm text-slate-400">
+				本隐私政策为占位框架，将根据业务开展与法规要求持续完善。
+			</p>
+		</div>
+	</section>
+</BaseLayout>
