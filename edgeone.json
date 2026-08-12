@@ -1,0 +1,7 @@
+{
+  "name": "assl-site",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "./dist",
+  "nodeVersion": "22.11.0"
+}
