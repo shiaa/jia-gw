@@ -6,68 +6,101 @@ import { site } from '../data/site';
 const milestones = [
 	{ year: '2024', title: '公司成立', desc: '公司正式成立，聚焦网络安全与基础服务领域。' },
 	{ year: '2025', title: 'SSL 证书平台启动', desc: '启动 SSL 证书平台研发，构建全流程签发管理体系。' },
-	{ year: '规划中', title: '安全服务矩阵', desc: '逐步扩展安全合规、CDN 加速等服务，构建完整生态。' },
+	{ year: '规划中', title: '安全服务矩阵', desc: '逐步扩展安全合规、等保咨询等服务，构建完整生态。' },
+];
+
+const values = [
+	{ title: '安全至上', desc: '将安全视为立身之本，贯穿每个产品与服务细节。' },
+	{ title: '专业可信', desc: '以过硬的技术实力与透明服务，赢得客户长期信赖。' },
+	{ title: '客户成功', desc: '以客户业务价值为导向，提供贴身式支持与陪伴。' },
 ];
 ---
 
 <BaseLayout title="关于我们" description={`了解${site.companyName}的发展历程与愿景。`}>
-	<section class="border-b border-slate-200 bg-slate-50">
-		<div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-			<h1 class="text-4xl font-extrabold text-slate-900">关于我们</h1>
-			<p class="mt-3 max-w-2xl text-lg text-slate-600">
+	<!-- 页头 -->
+	<section class="relative overflow-hidden border-b border-white/10 bg-night-900">
+		<div aria-hidden class="pointer-events-none absolute inset-0">
+			<div class="absolute -top-16 left-1/2 h-72 w-96 -translate-x-1/2 rounded-full bg-brand-500/15 blur-3xl" />
+		</div>
+		<div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
+			<span class="text-sm font-semibold uppercase tracking-widest text-brand-400">About</span>
+			<h1 class="mt-2 text-4xl font-extrabold text-white">关于我们</h1>
+			<p class="mt-3 max-w-2xl text-lg text-slate-400">
 				构建安全可信的数字世界，是我们的使命。
 			</p>
 		</div>
 	</section>
 
 	<!-- 公司介绍 -->
-	<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+	<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
 		<div class="grid gap-10 md:grid-cols-2">
 			<div>
-				<h2 class="text-2xl font-bold text-slate-900">公司介绍</h2>
-				<p class="mt-4 leading-relaxed text-slate-600">
+				<span class="text-sm font-semibold uppercase tracking-widest text-brand-400">Company</span>
+				<h2 class="mt-2 text-2xl font-bold text-white">公司介绍</h2>
+				<p class="mt-4 leading-relaxed text-slate-400">
 					{site.companyName}（{site.brand}）是一家专注于网络安全与基础服务的技术企业。
 					我们以 SSL 证书签发与管理为核心，为电商、金融、教育、政企等行业客户提供
 					可信、高效、合规的安全解决方案。
 				</p>
-				<p class="mt-4 leading-relaxed text-slate-600">
+				<p class="mt-4 leading-relaxed text-slate-400">
 					我们相信，安全是数字业务发展的基石。通过专业的技术团队、稳定的服务能力
 					与可靠的合作伙伴生态，助力每一位客户构建安全可信的在线业务。
 				</p>
 			</div>
-			<div class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-				<h3 class="text-lg font-bold text-slate-900">资质与承诺</h3>
-				<ul class="mt-4 space-y-3 text-sm text-slate-600">
+			<div class="dark-card p-8">
+				<h3 class="text-lg font-bold text-white">资质与承诺</h3>
+				<ul class="mt-4 space-y-3 text-sm text-slate-400">
 					<li class="flex items-start gap-2">
-						<span class="mt-1 text-brand-600">•</span> 正规企业主体，合规经营（营业执照备案后补充）
+						<span class="mt-1 text-brand-400">•</span> 正规企业主体，合规经营（营业执照备案后补充）
 					</li>
 					<li class="flex items-start gap-2">
-						<span class="mt-1 text-brand-600">•</span> 与主流 CA 机构深度合作，证书可信可靠
+						<span class="mt-1 text-brand-400">•</span> 与主流 CA 机构深度合作，证书可信可靠
 					</li>
 					<li class="flex items-start gap-2">
-						<span class="mt-1 text-brand-600">•</span> 7×24 小时专业技术支持
+						<span class="mt-1 text-brand-400">•</span> 7×24 小时专业技术支持
 					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
-	<!-- 发展历程 -->
-	<section class="bg-slate-50 py-16">
-		<div class="mx-auto max-w-6xl px-4 sm:px-6">
-			<h2 class="text-2xl font-bold text-slate-900">发展历程</h2>
-			<div class="mt-10 space-y-8 border-l-2 border-brand-200 pl-6">
-				{
-					milestones.map((m) => (
-						<div class="relative">
-							<span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full border-2 border-brand-500 bg-white" />
-							<span class="text-sm font-semibold text-brand-600">{m.year}</span>
-							<h3 class="mt-1 text-lg font-bold text-slate-900">{m.title}</h3>
-							<p class="mt-1 text-sm text-slate-600">{m.desc}</p>
-						</div>
-					))
-				}
+	<!-- 企业价值观 -->
+	<section class="border-y border-white/10 bg-night-900/50">
+		<div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+			<div class="text-center">
+				<span class="text-sm font-semibold uppercase tracking-widest text-brand-400">Values</span>
+				<h2 class="mt-2 text-2xl font-bold text-white">企业价值观</h2>
 			</div>
+			<div class="mt-10 grid gap-6 md:grid-cols-3">
+				{values.map((v) => (
+					<div class="dark-card p-6 text-center">
+						<span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-brand-500/15 text-brand-300">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</span>
+						<h3 class="mt-4 text-lg font-bold text-white">{v.title}</h3>
+						<p class="mt-2 text-sm text-slate-400">{v.desc}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- 发展历程 -->
+	<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+		<h2 class="text-2xl font-bold text-white">发展历程</h2>
+		<div class="mt-10 space-y-8 border-l-2 border-brand-500/30 pl-6">
+			{
+				milestones.map((m) => (
+					<div class="relative">
+						<span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full border-2 border-brand-500 bg-night-900" />
+						<span class="text-sm font-semibold text-brand-300">{m.year}</span>
+						<h3 class="mt-1 text-lg font-bold text-white">{m.title}</h3>
+						<p class="mt-1 text-sm text-slate-400">{m.desc}</p>
+					</div>
+				))
+			}
 		</div>
 	</section>
 

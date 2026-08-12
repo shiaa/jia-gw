@@ -3,51 +3,61 @@ import { site, navLinks, products } from '../data/site';
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 bg-slate-50">
-	<div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
+<footer class="border-t border-white/10 bg-night-900/60">
+	<div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
 		<!-- 品牌 -->
 		<div class="md:col-span-2">
-			<div class="flex items-center gap-2 text-lg font-bold text-brand-600">
-				<span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">A</span>
+			<div class="flex items-center gap-2 text-lg font-bold text-white">
+				<span class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 text-white">A</span>
 				<span>{site.brand}</span>
 			</div>
-			<p class="mt-3 max-w-sm text-sm leading-relaxed text-slate-500">
+			<p class="mt-3 max-w-sm text-sm leading-relaxed text-slate-400">
 				{site.description}
 			</p>
+			<div class="mt-5 flex items-center gap-3">
+				<span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+					<span class="h-1.5 w-1.5 rounded-full bg-green-400" />
+					7×24 技术支持
+				</span>
+				<span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+					<span class="h-1.5 w-1.5 rounded-full bg-brand-400" />
+					快速签发
+				</span>
+			</div>
 		</div>
 
 		<!-- 导航 -->
 		<div>
-			<h3 class="text-sm font-semibold text-slate-900">快速导航</h3>
-			<ul class="mt-3 space-y-2 text-sm text-slate-600">
+			<h3 class="text-sm font-semibold text-white">快速导航</h3>
+			<ul class="mt-3 space-y-2 text-sm text-slate-400">
 				{navLinks.map((link) => (
-					<li><a href={link.href} class="hover:text-brand-600">{link.label}</a></li>
+					<li><a href={link.href} class="transition hover:text-brand-300">{link.label}</a></li>
 				))}
 			</ul>
 		</div>
 
 		<!-- 产品与合规 -->
 		<div>
-			<h3 class="text-sm font-semibold text-slate-900">产品与合规</h3>
-			<ul class="mt-3 space-y-2 text-sm text-slate-600">
+			<h3 class="text-sm font-semibold text-white">产品与合规</h3>
+			<ul class="mt-3 space-y-2 text-sm text-slate-400">
 				{products.map((p) => (
-					<li><a href={p.href} class="hover:text-brand-600">{p.name}</a></li>
+					<li><a href={p.href} class="transition hover:text-brand-300">{p.name}</a></li>
 				))}
-				<li><a href="/legal/privacy" class="hover:text-brand-600">隐私政策</a></li>
-				<li><a href="/legal/terms" class="hover:text-brand-600">服务条款</a></li>
+				<li><a href="/legal/privacy" class="transition hover:text-brand-300">隐私政策</a></li>
+				<li><a href="/legal/terms" class="transition hover:text-brand-300">服务条款</a></li>
 			</ul>
 		</div>
 	</div>
 
 	<!-- 底部备案 -->
-	<div class="border-t border-slate-200">
+	<div class="border-t border-white/10">
 		<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:px-6">
 			<p>© {year} {site.companyName} 保留所有权利</p>
 			<a
 				href={site.icpLink}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="hover:text-brand-600"
+				class="transition hover:text-brand-300"
 			>
 				{site.icp}
 			</a>

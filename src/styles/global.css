@@ -2,17 +2,20 @@
 
 @theme {
 	--font-sans: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
-	--color-brand-50: #eef6ff;
-	--color-brand-100: #d9eaff;
-	--color-brand-200: #bcdaff;
-	--color-brand-300: #8ec2ff;
-	--color-brand-400: #599eff;
-	--color-brand-500: #3377ff;
-	--color-brand-600: #1f55f5;
-	--color-brand-700: #1840e1;
-	--color-brand-800: #1a35b6;
-	--color-brand-900: #1b318f;
-	--color-brand-950: #151f57;
+	/* 品牌蓝（亮色，用于深色背景上的点缀） */
+	--color-brand-50: #e8f1ff;
+	--color-brand-100: #cfe2ff;
+	--color-brand-200: #a3c8ff;
+	--color-brand-300: #6fa8ff;
+	--color-brand-400: #3d86ff;
+	--color-brand-500: #1f66ff;
+	--color-brand-600: #0f4ee6;
+	--color-brand-700: #0c3eb8;
+	/* 深色背景层级 */
+	--color-night-950: #070b14;
+	--color-night-900: #0b1120;
+	--color-night-800: #111a2e;
+	--color-night-700: #1a2640;
 }
 
 html {
@@ -20,6 +23,45 @@ html {
 }
 
 body {
-	@apply antialiased bg-white text-slate-800;
+	@apply antialiased bg-night-950 text-slate-300;
 	font-family: var(--font-sans);
+}
+
+::selection {
+	@apply bg-brand-500/40 text-white;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--color-night-950);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--color-night-700);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-brand-600);
+}
+
+/* 深色卡片通用样式 */
+.dark-card {
+	@apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur transition hover:border-brand-500/40 hover:bg-white/[0.07];
+}
+
+/* 渐变文字 */
+.gradient-text {
+	@apply bg-clip-text text-transparent;
+	background-image: linear-gradient(90deg, #6fa8ff, #3d86ff 40%, #a78bfa);
+}
+
+/* 网格背景 */
+.grid-bg {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+	background-size: 48px 48px;
 }
