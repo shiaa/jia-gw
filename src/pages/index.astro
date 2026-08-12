@@ -24,7 +24,8 @@ const cases = [
 	<Hero />
 
 	<!-- 产品与服务 -->
-	<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+	<section class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
+		<div aria-hidden class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
 		<div class="text-center">
 			<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">Products</span>
 			<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">产品与服务</h2>
@@ -42,8 +43,12 @@ const cases = [
 	</section>
 
 	<!-- 核心能力 -->
-	<section class="border-y border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-night-900/50">
-		<div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+	<section class="section-alt relative overflow-hidden">
+		<div aria-hidden class="pointer-events-none absolute inset-0">
+			<div class="bg-blob -top-20 right-0 h-72 w-72 bg-brand-500/10 dark:bg-brand-500/10" />
+			<div class="bg-blob bottom-0 left-0 h-64 w-64 bg-purple-500/10 dark:bg-purple-500/10" />
+		</div>
+		<div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
 			<div class="text-center">
 				<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">Capabilities</span>
 				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">核心能力</h2>
@@ -84,8 +89,12 @@ const cases = [
 	</section>
 
 	<!-- 客户案例 -->
-	<section class="border-y border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-night-900/50">
-		<div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+	<section class="section-alt relative overflow-hidden">
+		<div aria-hidden class="pointer-events-none absolute inset-0">
+			<div class="bg-blob -bottom-16 right-1/4 h-64 w-64 bg-brand-500/10 dark:bg-brand-500/10" />
+			<div class="bg-blob top-0 left-1/5 h-56 w-56 bg-cyan-500/10 dark:bg-cyan-400/10" />
+		</div>
+		<div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
 			<div class="text-center">
 				<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">Cases</span>
 				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">客户案例</h2>
@@ -144,8 +153,11 @@ const cases = [
 	</section>
 
 	<!-- 常见问题 -->
-	<section class="border-y border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-night-900/50">
-		<div class="mx-auto max-w-4xl px-4 py-20 sm:px-6">
+	<section class="section-alt relative overflow-hidden">
+		<div aria-hidden class="pointer-events-none absolute inset-0">
+			<div class="bg-blob -top-20 left-1/2 h-64 w-96 -translate-x-1/2 bg-brand-500/10 dark:bg-brand-500/10" />
+		</div>
+		<div class="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
 			<div class="text-center">
 				<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">FAQ</span>
 				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">常见问题</h2>
