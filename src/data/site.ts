@@ -49,9 +49,9 @@ export const products = [
 		status: 'available' as const,
 	},
 	{
-		slug: 'cdn',
-		name: 'CDN 加速',
-		short: '全球边缘节点加速，提升网站访问速度与可用性',
+		slug: 'compliance',
+		name: '等保合规咨询',
+		short: '网络安全等级保护测评与合规咨询服务，助力通过等保评测',
 		href: '#',
 		external: false,
 		status: 'coming' as const,
