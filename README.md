@@ -59,10 +59,21 @@ astro dev logs     # 查看日志
 
 ## 部署
 
+项目已同时适配**阿里云 ESA** 和**腾讯云 EdgeOne** 两个平台，各自识别自己的配置文件，互不影响。
+
+| 平台 | 配置文件 | 关键配置 |
+|------|----------|----------|
+| 阿里云 ESA | `esa.jsonc` | `assets.directory: ./dist` |
+| 腾讯云 EdgeOne | `edgeone.json` | `outputDirectory: ./dist` |
+
+### 通用步骤
 1. 推送到 GitHub 主干分支
-2. 在 EdgeOne Makers 创建项目，选择 Git 集成，配置构建命令 `npm run build`、产物目录 `dist/`
-3. 绑定自定义域名 `assl.site`（+ `www.assl.site`）
-4. 加速区域：海外先上线（免备案），备案通过后切换大陆区域
+2. 在对应平台创建项目，选择 Git 集成导入本仓库
+3. 平台自动读取配置文件并构建部署（`npm run build` → `dist/`）
+4. 绑定自定义域名 `assl.site`（+ `www.assl.site`）
+5. 加速区域：海外先上线（免备案），备案通过后切换大陆区域
+
+> 两个平台均可独立部署同一份代码，适合做多平台容灾或对比访问速度。
 
 ## 待确认事项
 

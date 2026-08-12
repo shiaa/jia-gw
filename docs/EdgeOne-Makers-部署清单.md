@@ -100,8 +100,49 @@ git push origin main
 | 大陆无法访问 | 当前为海外加速区域，备案通过后切换大陆区域 |
 | 域名未生效 | 检查 CNAME 记录是否正确、DNS 是否已生效 |
 
-## 六、后续待办
+## 六、阿里云 ESA 部署（双平台之一）
 
-- [ ] 备案审核通过后，将 Makers 加速区域切换为大陆
+> 本项目已适配**阿里云 ESA** 和 **腾讯云 EdgeOne** 双平台。两者各自识别自己的配置文件，互不影响。
+
+### 配置文件
+
+| 平台 | 配置文件 | 核心配置 |
+|------|----------|----------|
+| 阿里云 ESA | `esa.jsonc` | `assets.directory: ./dist` |
+| 腾讯云 EdgeOne | `edgeone.json` | `outputDirectory: ./dist` |
+
+### ESA 部署步骤
+1. 将代码推送到 GitHub（含根目录 `esa.jsonc`）
+2. 登录阿里云 ESA 控制台 → 「边缘计算和 AI」→「函数和 Pages」→ 创建 Pages 项目
+3. 导入 GitHub 仓库 `shiaa/jia-gw`
+4. ESA 自动检测 `esa.jsonc` 并作为配置唯一来源，执行 `npm install` + `npm run build`
+5. 静态资源目录 `./dist`，未命中返回 404 页面（多页 SSG 模式）
+6. 绑定自定义域名 `assl.site`，配置 HTTPS 与 DNS
+
+### esa.jsonc 说明
+```jsonc
+{
+  "name": "assl-site",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "assets": {
+    "directory": "./dist",
+    "notFoundStrategy": "404Page"
+  }
+}
+```
+- 纯静态站**无需配置函数入口**（`entry` 字段），只指定 `assets.directory` 即可
+- 之前报错 "Both assets and function js file are not found" 即因缺少本文件导致
+
+### 常见问题
+| 问题 | 解决方案 |
+|------|----------|
+| 找不到构建产物 | 确认 `esa.jsonc` 中 `assets.directory` 为 `./dist` |
+| 修改配置不生效 | 推送到 GitHub 后，配置变更会自动触发重新部署 |
+
+## 七、后续待办
+
+- [ ] 备案审核通过后，将加速区域切换为大陆
 - [ ] SSL 证书平台二级域名 `ssl.assl.site`（二期）上线并绑定
 - [ ] 品牌中文名确认后，改 `src/data/site.ts` 一处并重新部署
+- [ ] 确认主用平台（阿里云 ESA / 腾讯云 EdgeOne），另一平台可作容灾备份
