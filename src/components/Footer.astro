@@ -43,7 +43,14 @@ const year = new Date().getFullYear();
 	<div class="border-t border-slate-200">
 		<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:px-6">
 			<p>© {year} {site.companyName} 保留所有权利</p>
-			<p>{site.icp}</p>
+			<a
+				href={site.icpLink}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="hover:text-brand-600"
+			>
+				{site.icp}
+			</a>
 		</div>
 	</div>
 </footer>

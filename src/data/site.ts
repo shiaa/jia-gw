@@ -20,6 +20,8 @@ export const site = {
 	sslUrl: 'https://ssl.assl.site',
 	/** ICP 备案号 */
 	icp: '粤ICP备2026111683号',
+	/** ICP 备案查询链接（工信部） */
+	icpLink: 'https://beian.miit.gov.cn/#/Integrated/index',
 	/** 联系方式 */
 	contact: {
 		email: 'contact@assl.site',
