@@ -36,6 +36,18 @@ const canonical = new URL(Astro.url.pathname, site.url);
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
 		<title>{fullTitle}</title>
+		<script is:inline>
+			// 主题初始化：在渲染前根据 localStorage 或系统偏好设置 <html class="dark">
+			(function () {
+				try {
+					var saved = localStorage.getItem('theme');
+					var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					if (saved === 'dark' || (!saved && prefersDark)) {
+						document.documentElement.classList.add('dark');
+					}
+				} catch (e) {}
+			})();
+		</script>
 	</head>
 	<body>
 		<Header />

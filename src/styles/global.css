@@ -1,17 +1,23 @@
 @import 'tailwindcss';
 
+/* 基于 .dark 根类驱动的暗色模式 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--font-sans: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
-	/* 品牌蓝（亮色，用于深色背景上的点缀） */
-	--color-brand-50: #e8f1ff;
-	--color-brand-100: #cfe2ff;
-	--color-brand-200: #a3c8ff;
-	--color-brand-300: #6fa8ff;
-	--color-brand-400: #3d86ff;
-	--color-brand-500: #1f66ff;
-	--color-brand-600: #0f4ee6;
-	--color-brand-700: #0c3eb8;
-	/* 深色背景层级 */
+	/* 品牌蓝 */
+	--color-brand-50: #eef6ff;
+	--color-brand-100: #d9eaff;
+	--color-brand-200: #bcdaff;
+	--color-brand-300: #8ec2ff;
+	--color-brand-400: #599eff;
+	--color-brand-500: #3377ff;
+	--color-brand-600: #1f55f5;
+	--color-brand-700: #1840e1;
+	--color-brand-800: #1a35b6;
+	--color-brand-900: #1b318f;
+	--color-brand-950: #151f57;
+	/* 深色背景层级（暗色模式用） */
 	--color-night-950: #070b14;
 	--color-night-900: #0b1120;
 	--color-night-800: #111a2e;
@@ -23,12 +29,13 @@ html {
 }
 
 body {
-	@apply antialiased bg-night-950 text-slate-300;
+	@apply antialiased bg-white text-slate-700 dark:bg-night-950 dark:text-slate-300;
 	font-family: var(--font-sans);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-	@apply bg-brand-500/40 text-white;
+	@apply bg-brand-500/30 text-brand-900 dark:bg-brand-500/40 dark:text-white;
 }
 
 /* 自定义滚动条 */
@@ -37,31 +44,46 @@ body {
 	height: 10px;
 }
 ::-webkit-scrollbar-track {
-	background: var(--color-night-950);
+	@apply bg-white dark:bg-night-950;
 }
 ::-webkit-scrollbar-thumb {
-	background: var(--color-night-700);
+	@apply bg-slate-300 dark:bg-night-700;
 	border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--color-brand-600);
+	@apply bg-brand-500;
 }
 
-/* 深色卡片通用样式 */
+/* 卡片：浅色/深色双模式 */
 .dark-card {
-	@apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur transition hover:border-brand-500/40 hover:bg-white/[0.07];
+	@apply rounded-2xl border border-slate-200 bg-white shadow-sm transition
+		dark:border-white/10 dark:bg-white/[0.04] dark:backdrop-blur dark:hover:border-brand-500/40 dark:hover:bg-white/[0.07];
 }
 
-/* 渐变文字 */
+/* 渐变文字（深色模式更强对比） */
 .gradient-text {
 	@apply bg-clip-text text-transparent;
+	background-image: linear-gradient(90deg, #1f55f5, #3377ff 40%, #7c3aed);
+}
+.dark .gradient-text {
 	background-image: linear-gradient(90deg, #6fa8ff, #3d86ff 40%, #a78bfa);
 }
 
-/* 网格背景 */
+/* 网格背景（深色模式可见） */
 .grid-bg {
+	background-image:
+		linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+	background-size: 48px 48px;
+}
+.dark .grid-bg {
 	background-image:
 		linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
 		linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-	background-size: 48px 48px;
+}
+
+/* 页面头部渐变背景 */
+.page-hero {
+	@apply border-b border-slate-200 bg-gradient-to-b from-brand-50/60 to-white
+		dark:border-white/10 dark:from-night-900 dark:to-night-950;
 }

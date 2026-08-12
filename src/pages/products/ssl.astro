@@ -30,14 +30,11 @@ const certTypes = [
 
 <BaseLayout title="SSL 证书" description={`一站式 SSL 证书签发与管理，快速签发 DV/OV/EV 证书。`}>
 	<!-- 页头 -->
-	<section class="relative overflow-hidden border-b border-white/10 bg-night-900">
-		<div aria-hidden class="pointer-events-none absolute inset-0">
-			<div class="absolute -top-16 left-1/2 h-72 w-96 -translate-x-1/2 rounded-full bg-brand-500/15 blur-3xl" />
-		</div>
+	<section class="page-hero">
 		<div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
-			<span class="text-sm font-semibold uppercase tracking-widest text-brand-400">SSL Product</span>
-			<h1 class="mt-2 text-4xl font-extrabold text-white">SSL 证书平台</h1>
-			<p class="mt-3 max-w-2xl text-lg text-slate-400">
+			<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">SSL Product</span>
+			<h1 class="mt-2 text-4xl font-extrabold text-slate-900 dark:text-white">SSL 证书平台</h1>
+			<p class="mt-3 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
 				一站式 SSL 证书签发与管理服务，快速签发 DV/OV/EV 证书，
 				为你的网站开启 HTTPS 加密，提升用户信任。
 			</p>
@@ -57,32 +54,32 @@ const certTypes = [
 
 	<!-- 证书类型对比 -->
 	<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-		<h2 class="text-2xl font-bold text-white">证书类型对比</h2>
-		<p class="mt-3 max-w-2xl text-slate-400">
+		<h2 class="text-2xl font-bold text-slate-900 dark:text-white">证书类型对比</h2>
+		<p class="mt-3 max-w-2xl text-slate-500 dark:text-slate-400">
 			根据业务需求选择合适的证书类型，为不同场景提供匹配的信任等级。
 		</p>
 		<div class="mt-8 overflow-x-auto">
-			<table class="w-full min-w-[640px] border-collapse overflow-hidden rounded-xl border border-white/10 text-left text-sm">
+			<table class="w-full min-w-[640px] border-collapse overflow-hidden rounded-xl border border-slate-200 text-left text-sm dark:border-white/10">
 				<thead>
-					<tr class="bg-night-800 text-white">
-						<th class="border border-white/10 px-4 py-3 font-semibold">类型</th>
-						<th class="border border-white/10 px-4 py-3 font-semibold">信任等级</th>
-						<th class="border border-white/10 px-4 py-3 font-semibold">验证要求</th>
-						<th class="border border-white/10 px-4 py-3 font-semibold">浏览器标识</th>
-						<th class="border border-white/10 px-4 py-3 font-semibold">适用场景</th>
+					<tr class="bg-slate-50 text-slate-900 dark:bg-night-800 dark:text-white">
+						<th class="border border-slate-200 px-4 py-3 font-semibold dark:border-white/10">类型</th>
+						<th class="border border-slate-200 px-4 py-3 font-semibold dark:border-white/10">信任等级</th>
+						<th class="border border-slate-200 px-4 py-3 font-semibold dark:border-white/10">验证要求</th>
+						<th class="border border-slate-200 px-4 py-3 font-semibold dark:border-white/10">浏览器标识</th>
+						<th class="border border-slate-200 px-4 py-3 font-semibold dark:border-white/10">适用场景</th>
 					</tr>
 				</thead>
 				<tbody>
 					{
 						certTypes.map((c) => (
-							<tr class="border border-white/10 align-top bg-white/[0.02] transition hover:bg-white/[0.06]">
-								<td class="border border-white/10 px-4 py-3 font-medium text-brand-300">
-									{c.type}<span class="ml-1 text-xs font-normal text-slate-500">{c.level}</span>
+							<tr class="border border-slate-200 align-top bg-white transition hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.02] dark:hover:bg-white/[0.06]">
+								<td class="border border-slate-200 px-4 py-3 font-medium text-brand-700 dark:border-white/10 dark:text-brand-300">
+									{c.type}<span class="ml-1 text-xs font-normal text-slate-400 dark:text-slate-500">{c.level}</span>
 								</td>
-								<td class="border border-white/10 px-4 py-3 text-slate-300">{c.trust}</td>
-								<td class="border border-white/10 px-4 py-3 text-slate-400">{c.validity}</td>
-								<td class="border border-white/10 px-4 py-3 text-slate-400">{c.trust}</td>
-								<td class="border border-white/10 px-4 py-3 text-slate-400">{c.apply}</td>
+								<td class="border border-slate-200 px-4 py-3 text-slate-700 dark:border-white/10 dark:text-slate-300">{c.trust}</td>
+								<td class="border border-slate-200 px-4 py-3 text-slate-600 dark:border-white/10 dark:text-slate-400">{c.validity}</td>
+								<td class="border border-slate-200 px-4 py-3 text-slate-600 dark:border-white/10 dark:text-slate-400">{c.trust}</td>
+								<td class="border border-slate-200 px-4 py-3 text-slate-600 dark:border-white/10 dark:text-slate-400">{c.apply}</td>
 							</tr>
 						))
 					}
@@ -92,9 +89,9 @@ const certTypes = [
 	</section>
 
 	<!-- 签发流程 -->
-	<section class="border-y border-white/10 bg-night-900/50">
+	<section class="border-y border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-night-900/50">
 		<div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-			<h2 class="text-2xl font-bold text-white">申请流程</h2>
+			<h2 class="text-2xl font-bold text-slate-900 dark:text-white">申请流程</h2>
 			<div class="mt-8 grid gap-6 md:grid-cols-4">
 				{
 					[
@@ -105,8 +102,8 @@ const certTypes = [
 					].map((s) => (
 						<div class="dark-card p-6 text-center">
 							<span class="text-3xl font-extrabold text-brand-500/50">{s.step}</span>
-							<h3 class="mt-3 text-base font-bold text-white">{s.title}</h3>
-							<p class="mt-1 text-sm text-slate-400">{s.desc}</p>
+							<h3 class="mt-3 text-base font-bold text-slate-900 dark:text-white">{s.title}</h3>
+							<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{s.desc}</p>
 						</div>
 					))
 				}
