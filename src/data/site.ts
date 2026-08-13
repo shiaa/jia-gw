@@ -24,9 +24,10 @@ export const site = {
 	icpLink: 'https://beian.miit.gov.cn/#/Integrated/index',
 	/** 联系方式 */
 	contact: {
-		email: 'contact@assl.site',
+		email: 'sywwei5@163.com',
+		qq: '24961121',
 		phone: '400-000-0000',
-		address: '北京市 ·（公司地址备案后补充）',
+		address: '深圳市龙华区',
 	},
 } as const;
 
