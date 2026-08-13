@@ -1,12 +1,5 @@
 ---
 import { site } from '../data/site';
-
-const stats = [
-	{ value: '10万+', label: '签发证书' },
-	{ value: '99.99%', label: '服务可用性' },
-	{ value: '7×24', label: '专业支持' },
-	{ value: '500+', label: '企业客户' },
-];
 ---
 
 <section class="relative overflow-hidden bg-gradient-to-b from-brand-50/70 via-white to-white dark:bg-night-950 dark:from-night-900 dark:via-night-950 dark:to-night-950">
@@ -40,16 +33,5 @@ const stats = [
 		<p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 			{site.description}
 		</p>
-		<!-- 数据指标 -->
-		<div class="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
-			{
-				stats.map((s) => (
-					<div class="text-center">
-						<p class="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">{s.value}</p>
-						<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{s.label}</p>
-					</div>
-				))
-			}
-		</div>
 	</div>
 </section>
