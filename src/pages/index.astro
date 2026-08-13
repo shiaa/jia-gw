@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SolutionCard from '../components/SolutionCard.astro';
 import CTASection from '../components/CTASection.astro';
-import { products, solutions, advantages, faqs } from '../data/site';
+import { products, solutions, faqs } from '../data/site';
 
 const capabilities = [
 	{ title: '一站式签发', desc: 'DV / OV / EV 全类型证书在线申请，流程透明，进度实时可查。' },
@@ -13,11 +13,6 @@ const capabilities = [
 	{ title: '安全审计', desc: '专业安全团队提供风险评估与合规建议，护航业务安全。' },
 ];
 
-const cases = [
-	{ industry: '电商', title: '大型电商平台全站 HTTPS 加密', result: '支付转化率提升 15%' },
-	{ industry: '金融', title: '金融机构 EV 证书部署与合规', result: '通过等保合规评测' },
-	{ industry: '政企', title: '政企门户批量证书管理', result: '运维成本降低 40%' },
-];
 ---
 
 <BaseLayout>
@@ -85,70 +80,6 @@ const cases = [
 		</div>
 		<div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 			{solutions.map((s) => <SolutionCard title={s.title} desc={s.desc} />)}
-		</div>
-	</section>
-
-	<!-- 客户案例 -->
-	<section class="section-alt relative overflow-hidden">
-		<div aria-hidden class="pointer-events-none absolute inset-0">
-			<div class="bg-blob -bottom-16 right-1/4 h-64 w-64 bg-brand-500/10 dark:bg-brand-500/10" />
-			<div class="bg-blob top-0 left-1/5 h-56 w-56 bg-cyan-500/10 dark:bg-cyan-400/10" />
-		</div>
-		<div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
-			<div class="text-center">
-				<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">Cases</span>
-				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">客户案例</h2>
-				<p class="mx-auto mt-3 max-w-xl text-slate-500 dark:text-slate-400">
-					真实场景验证，用结果说话。
-				</p>
-			</div>
-			<div class="mt-12 grid gap-6 md:grid-cols-3">
-				{
-					cases.map((c) => (
-						<div class="dark-card p-6">
-							<span class="inline-block rounded-full bg-brand-500/10 px-3 py-1 text-xs font-medium text-brand-700 dark:text-brand-300">
-								{c.industry}
-							</span>
-							<h3 class="mt-3 text-base font-bold text-slate-900 dark:text-white">{c.title}</h3>
-							<p class="mt-2 text-sm font-semibold text-brand-600 dark:text-brand-300">{c.result}</p>
-						</div>
-					))
-				}
-			</div>
-		</div>
-	</section>
-
-	<!-- 为什么选择我们 -->
-	<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-		<div class="grid items-center gap-12 lg:grid-cols-2">
-			<div>
-				<span class="text-sm font-semibold uppercase tracking-widest text-brand-500 dark:text-brand-400">Why Us</span>
-				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">为什么选择我们</h2>
-				<p class="mt-4 text-slate-500 dark:text-slate-400">
-					以专业的技术能力与贴心服务，护航你的每一次安全部署。从选型咨询到签发运维，
-					我们的安全专家全程陪伴，让 SSL 证书部署从未如此简单。
-				</p>
-				<a
-					href="/about"
-					class="mt-8 inline-flex items-center gap-2 text-brand-600 transition hover:text-brand-700 dark:text-brand-300 dark:hover:text-brand-200"
-				>
-					了解更多关于我们
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-					</svg>
-				</a>
-			</div>
-			<div class="grid gap-6 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-				{
-					advantages.map((a, i) => (
-						<div class="dark-card p-6">
-							<span class="text-4xl font-bold text-brand-500/40">{String(i + 1).padStart(2, '0')}</span>
-							<h3 class="mt-3 text-lg font-bold text-slate-900 dark:text-white">{a.title}</h3>
-							<p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">{a.desc}</p>
-						</div>
-					))
-				}
-			</div>
 		</div>
 	</section>
 
