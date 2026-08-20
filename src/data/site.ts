@@ -7,8 +7,8 @@
 export const site = {
 	/** 品牌名（占位，取自域名 ASSL） */
 	brand: 'ASSL',
-	/** 公司中文名（占位，备案后替换） */
-	companyName: 'ASSL 网络科技',
+	/** 公司中文名 */
+	companyName: '深圳市佳兴荣腾科技有限责任公司',
 	/** 公司简介（SEO description 用） */
 	description:
 		'面向企业的可信网络安全与基础服务提供商，提供 SSL 证书签发、证书管理与安全合规服务。',
@@ -26,8 +26,8 @@ export const site = {
 	contact: {
 		email: 'sywwei5@163.com',
 		qq: '24961121',
-		phone: '400-000-0000',
-		address: '深圳市龙华区',
+		phone: '17722519719',
+		address: '深圳市龙华区龙园社区梅苑新村三巷十七号301',
 	},
 } as const;
 
